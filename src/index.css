@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: NotoSans;
+	font-style: normal;
+	font-display: swap;
+	src: url("./assets/fonts/NotoSans-VariableFont_wdth,wght.ttf")
+		format("truetype");
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+	--color-neutral-900: hsl(227, 75%, 14%);
+	--color-neutral-800: hsl(226, 25%, 17%);
+	--color-neutral-700: hsl(225, 23%, 24%);
+	--color-neutral-600: hsl(226, 11%, 37%);
+	--color-neutral-300: hsl(0, 0%, 78%);
+	--color-neutral-200: hsl(217, 61%, 90%);
+	--color-neutral-100: hsl(0, 0%, 93%);
+	--color-neutral-0: hsl(200, 60%, 99%);
+
+	--color-red-400: hsl(3, 86%, 64%);
+	--color-red-500: hsl(3, 71%, 56%);
+	--color-red-700: hsl(3, 77%, 44%);
+
+	--color-card-bg: var(--color-neutral-0);
+	--color-btn-bg: var(--color-neutral-100);
+	--color-body-text: var(--color-neutral-800);
+
+	--color-gradient-bg: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+}
+
+.dark {
+	--color-neutral-900: hsl(227, 75%, 14%);
+	--color-neutral-800: hsl(226, 25%, 17%);
+	--color-neutral-700: hsl(225, 23%, 24%);
+	--color-neutral-600: hsl(226, 11%, 37%);
+	--color-neutral-300: hsl(0, 0%, 78%);
+	--color-neutral-200: hsl(217, 61%, 90%);
+	--color-neutral-100: hsl(0, 0%, 93%);
+	--color-neutral-0: hsl(200, 60%, 99%);
+
+	--color-red-400: hsl(3, 86%, 64%);
+	--color-red-500: hsl(3, 71%, 56%);
+	--color-red-700: hsl(3, 77%, 44%);
+
+	--color-card-bg: var(--color-neutral-800);
+	--color-btn-bg: var(--color-neutral-700);
+	--color-body-text: var(--color-neutral-100);
+
+	--color-gradient-bg: linear-gradient(180deg, #040918 0%, #091540 100%);
+}
+
+@layer base {
+	body {
+		font-family: "NotoSans", sans-serif;
+		background: var(--color-gradient-bg);
+		width: 100svw;
+		overflow-x: hidden;
+	}
+
+	.flex-center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
