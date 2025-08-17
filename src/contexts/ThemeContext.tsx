@@ -28,10 +28,16 @@ const ThemeContextProvider = ({ children }: ThemeProviderProps) => {
 		});
 	}
 
-	React.useLayoutEffect(() => {
+	React.useEffect(() => {
 		const currentTheme = localStorage.getItem("theme");
+		const isSystemDark = window.matchMedia(
+			"(prefers-color-scheme: dark)"
+		).matches;
+
 		if (currentTheme) {
 			setTheme(currentTheme as Theme);
+		} else {
+			setTheme(isSystemDark ? "dark" : "light");
 		}
 
 		document.documentElement.classList.toggle(
